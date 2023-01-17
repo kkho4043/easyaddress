@@ -1,0 +1,231 @@
+@import url("https://file.alphaprime.co.kr/AlphaSans/alpha-sans.css");
+
+
+
+
+.tooltiptext {
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+}
+
+
+.tooltip-left {
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip-left::after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-color: transparent transparent transparent black;
+}
+
+/* 왼쪽 툴팁 끝 */
+
+/* 오른쪽 툴팁 시작 */
+
+.tooltip-right {
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip-right::after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-color: transparent black transparent transparent;
+}
+
+/* 오른쪽 툴팁 끝 */
+
+.tooltip-top {
+    width: 120px;
+    bottom: 150%;
+    left: 80%;
+    margin-left: -60px;
+}
+
+.tooltip-top::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip-bottom {
+    width: 120px;
+    top: 150%;
+    left: 80%;
+    margin-left: -60px;
+}
+
+.tooltip-bottom::after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: transparent transparent black transparent;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+    padding: 3px !important;
+    border-top: solid 1px #44444444;
+}
+
+.ui-widget.ui-widget-content {
+    box-sizing: border-box !important;
+    overflow: hidden overlay !important;
+}
+
+.ui-widget.ui-widget-content::-webkit-scrollbar {
+    background: none;
+    width: 8px;
+    display: block;
+    transition: all 0.5s;
+}
+
+.ui-widget.ui-widget-content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(184 184 184);
+
+    transition: all 0.5s;
+    border-right: 3px solid #ffffff00;
+    border-left: 3px solid #ffffff00;
+    background-clip: padding-box;
+}
+
+.ui-widget.ui-widget-content::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px;
+    background-color: rgb(184 184 184);
+
+    transition: all 0.5s;
+    border-right: 2px solid #ffffff00;
+    border-left: 2px solid #ffffff00;
+    background-clip: padding-box;
+}
+
+.easy_jusoarea {
+    color: #333333;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: solid 1px #44444444;
+    padding: 7px 7px;
+}
+
+
+.easy_jusoarea-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.easy_jusoarea-top .jusoadd {
+    font-size: 20px;
+    color: rgba(65, 147, 255, 0.75);
+
+}
+
+.jusoadd {
+    font-size: 14px;
+    width: 100%;
+    color: #777777;
+}
+
+
+
+.jusoarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 15px;
+    align-items: center;
+}
+
+.jusoarea:first-child {
+    margin-bottom: 3px;
+}
+
+.jusotext {
+    width: 40px;
+    border: 1px solid #d9d9d9;
+    font-size: 11px;
+    /* height: 14px; */
+    display: flex;
+    justify-content: space-around;
+    margin-right: 5px;
+    border-radius: 2px;
+    /* padding: 1px; */
+    color: #777777;
+}
+
+
+.zip-no {
+    color: #77777777;
+}
+
+/* map */
+#maparea {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.easy-map {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.leaflet-popup-content {
+    text-align: center;
+    margin: 0 0 0 0;
+    line-height: unset;
+}
+
+.leaflet-popup-tip {
+    width: 12px;
+    height: 12px;
+    padding: 1px;
+    margin: -10px auto 0;
+    pointer-events: auto;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.juso-pop .leaflet-popup-content-wrapper {
+    background: none;
+    box-shadow: none;
+
+}
+
+.juso-pop .leaflet-popup-content-wrapper .leaflet-popup-content {
+    margin: 0;
+    font-size: 1px;
+    color: black;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.juso-pop .leaflet-popup-tip-container {
+    display: none;
+}

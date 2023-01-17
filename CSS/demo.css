@@ -1,0 +1,67 @@
+input.ip-line {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+input.ip-line~.line-animation:before,
+input.ip-line~.line-animation:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4472c4;
+    transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -webkit-transition: 0.25s ease all;
+}
+
+input.ip-line~.line-animation:before {
+    left: 50%;
+}
+
+input.ip-line~.line-animation:after {
+    right: 50%;
+}
+
+input.ip-line:focus~.line-animation:before,
+input.ip-line:focus~.line-animation:after {
+    width: 50%;
+}
+
+
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label,
+input.ip-label-fix~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}
+
+input.ip-label-fix~label {
+    color: #8f8f8f;
+    font-size: 1.1rem;
+    position: absolute;
+    pointer-events: none;
+    top: -0.7rem;
+    left: 0.4rem;
+    background-color: white;
+
+}

@@ -1,0 +1,101 @@
+#input-area {
+    position: relative;
+    width: 300px;
+    margin-top: 50px;
+}
+
+.address-dropdown {
+    width: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    position: absolute;
+    border: solid 1px;
+    background-color: white;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 5px 0px;
+    scroll-margin: 0;
+    z-index: 5;
+    margin-top: 22px;
+    top: 0;
+}
+
+.address-dropdown.closed {
+    display: none;
+}
+
+.address-dropdown-dropdown-data {
+    scroll-snap-align: start;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    cursor: pointer;
+    width: 400px;
+}
+
+.address-dropdown-data.focuse {
+    background-color: bisque;
+    scroll-snap-align: start;
+}
+
+.address-dropdown-data:hover {
+    background-color: bisque;
+}
+
+.address-dropdown.scroll::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+.address-dropdown::-webkit-scrollbar {
+    background: #e4edfc;
+    width: 8px;
+    display: block;
+    transition: all 0.5s;
+}
+
+.address-dropdown::-webkit-scrollbar-track {
+    background: #e4edfc;
+    display: block;
+    transition: all 0.5s;
+}
+
+.address-dropdown::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #a8bdf4;
+    display: block;
+    transition: all 0.5s;
+}
+
+.jusoarea {
+    margin-bottom: 10px;
+}
+
+.jusotext {
+    font-size: 17px;
+}
+
+.jusoaddr {
+    font-size: 11px;
+}
+
+.jusoani {
+    transition-duration: 0.5s;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: wheat;
+    text-overflow: ellipsis;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.input-label {
+    font-size: 12px;
+    position: absolute;
+    line-height: 2;
+    margin-left: 5px;
+}

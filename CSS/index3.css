@@ -1,0 +1,476 @@
+@import url("https://file.alphaprime.co.kr/AlphaSans/alpha-sans.css");
+
+.exarea {
+    display: flex;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: "AlphaSans", sans-serif
+}
+
+.easyaddress-input {
+
+    width: 100%;
+    /* overflow: hidden; */
+    border: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0%;
+}
+
+.easyaddress-input:not(.line-input, .box-input) {
+    border: 1px solid #6f6f6f;
+    border-radius: 4px;
+    padding: 0px 0px 0px 5px;
+    box-sizing: border-box;
+
+}
+
+.easyaddress-input.line-input:hover,
+.easyaddress-input.line-input:focus-within {
+
+    box-shadow: 0px 3px 5px -4px grey;
+}
+
+
+.easyaddress-input.box-input:hover,
+.easyaddress-input.box-input:focus-within {
+    box-shadow: 2px 2px 15px -8px grey;
+}
+
+.easyaddress-address-area.detail {
+    white-space: nowrap;
+    height: 100%;
+    float: right;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.easyaddress-address-area.detail .easyaddress-jusoarea-area {
+    width: fit-content;
+    display: inline-block;
+    height: 100%;
+    outline: none;
+    padding: 3px 1px;
+    /* overflow: hidden; */
+    text-align: right;
+
+}
+
+.easyaddress-address-area {
+
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+
+}
+
+.line-input .easyaddress-address-area {
+
+    border-bottom: 1px solid #b1b1b1;
+}
+
+.box-input .easyaddress-address-area {
+    box-sizing: border-box;
+    transition: 0.5s;
+    border: solid 1px #b1b1b1;
+    opacity: 1;
+}
+
+.box-input .easyaddress-address-area:focus-within {
+    border: solid 1px rgba(65, 147, 255, 0.75);
+
+}
+
+
+
+.line-input .easyaddress-address-area::after {
+    content: "";
+    width: 0%;
+    transition: 0.5s;
+    position: absolute;
+    background: rgba(65, 147, 255, 0.75);
+    height: 1px;
+    bottom: 0px;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.line-input .easyaddress-address-area:focus-within::after {
+    width: 100%;
+}
+
+
+
+
+/* .easyaddress-jusoarea-area:focus{
+    outline: none;
+    border:none;
+    
+} */
+
+.easyaddress-detailarea-area {
+    min-width: 80px;
+    border: none;
+    display: none;
+    height: 100%;
+    outline: none;
+    padding: 3px 1px;
+}
+
+.easyaddress-address-area.detail .easyaddress-detailarea-area {
+    min-width: 80px;
+    border: none;
+    display: inline-block;
+    height: 100%;
+    outline: none;
+    padding: 3px 1px;
+}
+
+
+
+.easyaddress-label {
+
+    position: absolute;
+    left: 5px;
+    color: #b1b1b1;
+    font-size: 15px;
+    transition: 0.5s;
+    font-weight: 500;
+    top: 4px;
+    background-color: white;
+}
+
+.easyaddress-address-area.entered+.easyaddress-label {
+
+    position: absolute;
+    left: 3px;
+    color: "#b1b1b1";
+    font-size: 11px;
+    top: -15px;
+
+}
+
+
+
+
+.easyaddress-address-area:focus-within+.easyaddress-label {
+
+    position: absolute;
+    left: 3px;
+    color: rgba(65, 147, 255, 0.75);
+    font-size: 11px;
+    top: -15px;
+    font-weight: 600;
+
+}
+
+.label-fix .easyaddress-address-area+.easyaddress-label {
+
+    position: absolute;
+    left: 3px;
+    color: "#b1b1b1";
+    font-size: 11px;
+    top: -15px;
+
+}
+
+.label-none .easyaddress-address-area+.easyaddress-label {
+
+    display: none;
+
+}
+
+.tooltiptext {
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+}
+
+
+.tooltip-left {
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip-left::after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-color: transparent transparent transparent black;
+}
+
+/* 왼쪽 툴팁 끝 */
+
+/* 오른쪽 툴팁 시작 */
+
+.tooltip-right {
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip-right::after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-color: transparent black transparent transparent;
+}
+
+/* 오른쪽 툴팁 끝 */
+
+.tooltip-top {
+    width: 120px;
+    bottom: 150%;
+    left: 80%;
+    margin-left: -60px;
+}
+
+.tooltip-top::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip-bottom {
+    width: 120px;
+    top: 150%;
+    left: 80%;
+    margin-left: -60px;
+}
+
+.tooltip-bottom::after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: transparent transparent black transparent;
+}
+
+
+.easyaddress-jusoarea-area {
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    outline: none;
+    padding: 3px 1px;
+    color: #333333;
+}
+
+
+.address-dropdown {
+
+    min-height: 200px;
+    max-height: 200px;
+    width: 100%;
+    position: absolute;
+    /* border: rgb(39, 174, 95) 2px solid; */
+    border: solid 1px rgba(65, 147, 255, 0.75);
+    background-color: white;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* padding: 0px 10px; */
+    scroll-margin: 0;
+    z-index: 5;
+    margin-top: 27px;
+    left: 0;
+    top: 0;
+    /* padding: 10px; */
+    border-radius: 0px 0px 5px 5px;
+    border-top: none;
+    box-sizing: border-box;
+    /* box-shadow: 0px 7px 12px 0px #b9b9b9; */
+    overflow: overlay;
+    box-shadow: 0px 4px 5px -4px grey;
+}
+
+.line-input .address-dropdown {
+    /* margin-top: 29px; */
+}
+
+.address-dropdown.closed {
+    display: none;
+}
+
+.address-dropdown-dropdown-data {
+    scroll-snap-align: start;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    cursor: pointer;
+    width: 400px;
+}
+
+.address-dropdown-data.focuse {
+    background-color: #eaeaea;
+    scroll-snap-align: start;
+}
+
+.address-dropdown-data:hover {
+    background-color: #eaeaea;
+}
+
+.address-dropdown::-webkit-scrollbar-button {
+    /* width: 0; */
+}
+
+.address-dropdown::-webkit-scrollbar {
+    background: none;
+    width: 8px;
+    display: block;
+    transition: all 0.5s;
+}
+
+
+
+.address-dropdown::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(184 184 184);
+    /* display: block; */
+    transition: all 0.5s;
+    border-right: 3px solid #ffffff00;
+    border-left: 3px solid #ffffff00;
+    background-clip: padding-box;
+}
+
+.address-dropdown::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px;
+    background-color: rgb(184 184 184);
+    /* display: block; */
+    transition: all 0.5s;
+    border-right: 2px solid #ffffff00;
+    border-left: 2px solid #ffffff00;
+    background-clip: padding-box;
+}
+
+.address-dropdown:last-child {
+    /* border-bottom: solid 1px #44444444; */
+}
+
+.easy_jusoarea {
+    color: #333333;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: solid 1px #44444444;
+    padding: 7px 7px;
+}
+
+
+.easy_jusoarea-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.easy_jusoarea-top .jusoadd {
+    font-size: 20px;
+    color: rgba(65, 147, 255, 0.75);
+
+}
+
+.jusoadd {
+    font-size: 14px;
+    width: 100%;
+    color: #777777;
+}
+
+.juso-option {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.juso-option a {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+}
+
+.jusoarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 15px;
+    align-items: center;
+}
+
+.jusoarea:first-child {
+    margin-bottom: 3px;
+}
+
+.jusotext {
+    width: 40px;
+    border: 1px solid #d9d9d9;
+    font-size: 11px;
+    /* height: 14px; */
+    display: flex;
+    justify-content: space-around;
+    margin-right: 5px;
+    border-radius: 2px;
+    /* padding: 1px; */
+    color: #777777;
+}
+
+
+.zip-no {
+    color: #77777777;
+}
+
+/* map */
+#maparea {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.easy-map {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.leaflet-popup-content {
+    text-align: center;
+    margin: 0 0 0 0;
+    line-height: unset;
+}
+
+.leaflet-popup-tip {
+    width: 12px;
+    height: 12px;
+    padding: 1px;
+    margin: -10px auto 0;
+    pointer-events: auto;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
