@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script src="/JS/common.js"></script>
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/cart.css">
+    <link rel="stylesheet" href="/CSS/index2.css">
+    <link rel="stylesheet" href="/CSS/demo.css">
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css">
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/vs.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+
+    <div id="container">
+        <div id="benner-area">
+            <div id="desc">주소 검색을 쉽게</div>
+            <div id="benner"><img src="/img/logo.png">Easy Address</div>
+
+        </div>
+        <div id="compare-area">
+
+            <div id="before-area" class="order-area">
+                <div id="modal-back">
+                    <div id="modal-area">
+                        <div id="modal-title">
+                            <button id="modal-close-btn" class="close-btn">닫기</button>
+                        </div>
+                        <div id="modal-juso">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spotlight before">
+                    before
+                </div>
+
+
+                <div id="before-address" class="address-area">
+
+                    <div class="cart-item-wrap">
+
+                        <div class="cart-item-box">
+                            <div><i class="flaticon-down"></i></div>
+
+
+                            <div class="cart-item">
+                                <img src="https://boons.kr/pick/img/prod-item-01.png" />
+                                <div>
+                                    <div>150w 고속 PD 충전기</div>
+                                    <div>
+                                        <div>
+                                            <div>7,315</div>
+                                            <div>원</div>
+                                        </div>
+                                        <div>-</div>
+                                        <div>7</div>
+                                        <div>+</div>
+                                    </div>
+                                </div>
+                                <i class="flaticon-close"></i>
+                            </div>
+                            <div class="cart-item">
+                                <img src="https://boons.kr/pick/img/prod-item-02.png" />
+                                <div>
+                                    <div>150w 고속 PD 충전기 150w</div>
+                                    <div>
+                                        <div>
+                                            <div>13,315</div>
+                                            <div>원</div>
+                                        </div>
+                                        <div>-</div>
+                                        <div>8</div>
+                                        <div>+</div>
+
+                                    </div>
+                                </div>
+                                <i class="flaticon-close"></i>
+                            </div>
+
+                            <div class="shipping-fee">
+                                <div>배송비용</div>
+                                <div>3,000</div>
+                                <div>원</div>
+                            </div>
+                            <div class="payment-amount">
+                                <div>결제총액</div>
+                                <div>233,000</div>
+                                <div>원</div>
+                            </div>
+
+                            <hr class="line-01">
+
+
+                            <div class="receive-info-box">
+
+                                <div class="inputwrapper">
+                                    <input type="text" class="cart-inout" required>
+                                    <span class="balken"></span>
+                                    <label>받는사람</label>
+                                </div>
+
+
+                                <div class="inputwrapper">
+                                    <input type="text" class="cart-inout" required>
+                                    <span class="balken"></span>
+                                    <label>휴대전화</label>
+                                </div>
+
+                                <div class="inputwrapper">
+                                    <input type="text" class="cart-inout" required>
+                                    <span class="balken"></span>
+                                    <label>요청사항</label>
+                                </div>
+
+                                <div id="compare-juso-before" class="">
+                                    <div class="zipnowrapper">
+                                        <div id="zipno-area" class="inputwrapper">
+                                            <input type="text" id="old-zipNo-input" class="cart-inout" required>
+                                            <span class="balken"></span>
+                                            <label>우편번호</label>
+                                        </div>
+                                        <div class="inputwrapper" id="search-address-wrapper">
+                                            <button id="search-address">주소검색</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="address-area" class="inputwrapper">
+                                        <input type="text" id="old-address-input" class="cart-inout" required>
+                                        <span class="balken"></span>
+                                        <label>주소</label>
+                                    </div>
+
+                                    <div id="address-area" class="inputwrapper ">
+                                        <input type="text" class="cart-inout" required>
+                                        <span class="balken"></span>
+                                        <label>상세주소</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="terms-agree"><span>서비스 약관</span>을 확인하였으며, 위 상품 결제에 동의합니다.</div>
+                            <div class="pay-agree"></div>
+
+                            <div class="pay-now-box">
+                                <div class="pay-now"><img src="https://boons.kr/pick/img/payment_icon_yellow_small.png">
+                                    결제하기</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="compare-scroll-btn">
+                <div id="arrow-btn">
+                    <div class="arrow-btn">
+
+                        <img src="/img/dash_left.svg">
+
+
+                    </div>
+                    <div class="arrow-btn">
+
+                        <img src="/img/dash_right.svg">
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="after-area" class="order-area">
+                <div class="spotlight after">
+                    after
+                </div>
+                <div id="after-address" class="address-area">
+
+                    <div id="cart-item-after" class="cart-item-wrap">
+
+                        <div class="cart-item-box">
+                            <div><i class="flaticon-down"></i></div>
+
+
+                            <div class="cart-item">
+                                <img src="https://boons.kr/pick/img/prod-item-01.png" />
+                                <div>
+                                    <div>150w 고속 PD 충전기</div>
+                                    <div>
+                                        <div>
+                                            <div>7,315</div>
+                                            <div>원</div>
+                                        </div>
+                                        <div>-</div>
+                                        <div>7</div>
+                                        <div>+</div>
+                                    </div>
+                                </div>
+                                <i class="flaticon-close"></i>
+                            </div>
+                            <div class="cart-item">
+                                <img src="https://boons.kr/pick/img/prod-item-02.png" />
+                                <div>
+                                    <div>150w 고속 PD 충전기 150w</div>
+                                    <div>
+                                        <div>
+                                            <div>13,315</div>
+                                            <div>원</div>
+                                        </div>
+                                        <div>-</div>
+                                        <div>8</div>
+                                        <div>+</div>
+
+                                    </div>
+                                </div>
+                                <i class="flaticon-close"></i>
+                            </div>
+
+                            <div class="shipping-fee">
+                                <div>배송비용</div>
+                                <div>3,000</div>
+                                <div>원</div>
+                            </div>
+                            <div class="payment-amount">
+                                <div>결제총액</div>
+                                <div>233,000</div>
+                                <div>원</div>
+                            </div>
+
+                            <hr class="line-01">
+
+
+                            <div class="receive-info-box">
+
+                                <div class="inputwrapper">
+                                    <input type="text" class="cart-inout" required>
+                                    <span class="balken"></span>
+                                    <label>받는사람</label>
+                                </div>
+
+
+
+                                <div class="inputwrapper">
+                                    <input type="text" class="cart-inout" required>
+                                    <span class="balken"></span>
+                                    <label>휴대전화</label>
+                                </div>
+
+                                <div class="inputwrapper">
+                                    <input type="text" class="cart-inout" required>
+                                    <span class="balken"></span>
+                                    <label>요청사항</label>
+                                </div>
+
+                                <div id="compare-juso-after" class="">
+                                    <div class="inputwrapper">
+                                        <input id="new-juso-input" class="cart-inout" required type="text">
+                                        <span class="balken"></span>
+                                        <label>주소입력</label>
+                                    </div>
+
+                                    <div id="map-area">
+                                        <div id="map-first-desc">
+                                            주소를 입력하고 검색결과를 선택하세요
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="terms-agree"><span>서비스 약관</span>을 확인하였으며, 위 상품 결제에 동의합니다.</div>
+                            <div class="pay-agree"></div>
+
+                            <div class="pay-now-box">
+                                <div class="pay-now"><img src="https://boons.kr/pick/img/payment_icon_yellow_small.png">
+                                    결제하기</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="demo-wrap">
+            <div class="demo-area">
+                <div class="demo-name">기본</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input1-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input1-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input1-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input1-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input1-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input1" class="" type="text">
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input1" class="" type="text"&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input1",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">기본(placeholder)</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input2-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input2-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input2-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input2-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input2-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input2" type="text" placeholder="주소입력">
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input2" type="text" placeholder="주소입력"&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input1",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">밑줄</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input3-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input3-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input3-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input3-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input3-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input3" class="ip-line" type="text">
+                            <span class="line-animation"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input3" class="ip-line" type="text"&gt;
+    &lt;span class="line-animation"&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+input.ip-line {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+input.ip-line~.line-animation:before,
+input.ip-line~.line-animation:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4472c4;
+    transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -webkit-transition: 0.25s ease all;
+}
+
+input.ip-line~.line-animation:before {
+    left: 50%;
+}
+
+input.ip-line~.line-animation:after {
+    right: 50%;
+}
+
+input.ip-line:focus~.line-animation:before,
+input.ip-line:focus~.line-animation:after {
+    width: 50%;
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input3",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">밑줄(placeholder)</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input4-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input4-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input4-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input4-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input4-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input4" class="ip-line" type="text" placeholder="주소입력">
+                            <span class="line-animation"></span>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input4" class="ip-line" type="text" placeholder="주소입력"&gt;
+    &lt;span class="line-animation"&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+input.ip-line {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+input.ip-line~.line-animation:before,
+input.ip-line~.line-animation:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4472c4;
+    transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -webkit-transition: 0.25s ease all;
+}
+
+input.ip-line~.line-animation:before {
+    left: 50%;
+}
+
+input.ip-line~.line-animation:after {
+    right: 50%;
+}
+
+input.ip-line:focus~.line-animation:before,
+input.ip-line:focus~.line-animation:after {
+    width: 50%;
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input4",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">라벨</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input5-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input5-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input5-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input5-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input5-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input5" class="ip-label" type="text" required>
+                            <label>주소입력</label>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input5" class="ip-label" type="text" required&gt;
+    &lt;label&gt;주소입력&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input5",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">밑줄 + 라벨</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input6-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input6-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input6-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input6-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input6-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input6" class="ip-label ip-line" type="text" required>
+                            <span class="line-animation"></span>
+                            <label>주소입력</label>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input6" class="ip-label ip-line" type="text" required&gt;
+    &lt;span class="line-animation"&gt;&lt;/span&gt;
+    &lt;label&gt;주소입력&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+
+input.ip-line {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+input.ip-line~.line-animation:before,
+input.ip-line~.line-animation:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4472c4;
+    transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -webkit-transition: 0.25s ease all;
+}
+
+input.ip-line~.line-animation:before {
+    left: 50%;
+}
+
+input.ip-line~.line-animation:after {
+    right: 50%;
+}
+
+input.ip-line:focus~.line-animation:before,
+input.ip-line:focus~.line-animation:after {
+    width: 50%;
+}
+
+
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input6",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">라벨(fix)</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <div class="input-wrap">
+                            <input type="radio" name="input7-demo" value="result" checked>
+                            <span>Result</span>
+                        </div>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input7-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input7-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input7-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input7-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+
+                        <div class="input-wrap">
+                            <input id="input7" class="ip-label-fix" type="text" required>
+                            <label>주소입력</label>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input7" class="ip-label-fix" type="text" required&gt;
+    &lt;label&gt;주소입력&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}
+
+input.ip-label-fix~label {
+    color: #8f8f8f;
+    font-size: 1.1rem;
+    position: absolute;
+    pointer-events: none;
+    top: -0.7rem;
+    left: 0.4rem;
+    background-color: white;
+
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input7",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">라벨(fix+placeholder)</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input8-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input8-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input8-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input8-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input8-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input8" class="ip-label-fix" placeholder="예)옥정서로 , 미림타워 , 역삼동 " type="text"
+                                required>
+                            <label>주소입력</label>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input8" class="ip-label-fix" placeholder="예)옥정서로 , 미림타워 , 역삼동 " type="text"required&gt;
+    &lt;label&gt;주소입력&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}
+
+input.ip-label-fix~label {
+    color: #8f8f8f;
+    font-size: 1.1rem;
+    position: absolute;
+    pointer-events: none;
+    top: -0.7rem;
+    left: 0.4rem;
+    background-color: white;
+
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input8",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">밑줄+라벨(fix)</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input9-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input9-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input9-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input9-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input9-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input9" class="ip-label-fix ip-line" type="text" required>
+                            <span class="line-animation"></span>
+                            <label>주소입력</label>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input9" class="ip-label-fix ip-line" type="text" required&gt;
+    &lt;span class="line-animation"&gt;&lt;/span&gt;
+    &lt;label&gt;주소입력&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+
+input.ip-line {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+input.ip-line~.line-animation:before,
+input.ip-line~.line-animation:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4472c4;
+    transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -webkit-transition: 0.25s ease all;
+}
+
+input.ip-line~.line-animation:before {
+    left: 50%;
+}
+
+input.ip-line~.line-animation:after {
+    right: 50%;
+}
+
+input.ip-line:focus~.line-animation:before,
+input.ip-line:focus~.line-animation:after {
+    width: 50%;
+}
+
+
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}
+
+input.ip-label-fix~label {
+    color: #8f8f8f;
+    font-size: 1.1rem;
+    position: absolute;
+    pointer-events: none;
+    top: -0.7rem;
+    left: 0.4rem;
+    background-color: white;
+
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input9",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-name">밑줄+라벨(fix+placeholder)</div>
+                <div class="demo-btn-area">
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input10-demo" value="result" checked>
+                        <span>Result</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input10-demo" value="html">
+                        <span>html</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input10-demo" value="css">
+                        <span>css</span>
+                    </label>
+
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input10-demo" value="js">
+                        <span>JS</span>
+                    </label>
+                    <label class="demo-type-btn">
+                        <input type="radio" name="input10-demo" value="resources">
+                        <span>Resources</span>
+                    </label>
+
+                </div>
+                <div class="demo-wrap demo-type-result">
+
+                    <div class="demo-result demo-type">
+                        <div class="input-wrap">
+                            <input id="input10" class="ip-label-fix ip-line" placeholder="예)옥정서로 , 미림타워 , 역삼동 "
+                                type="text" required>
+                            <span class="line-animation"></span>
+                            <label>주소입력</label>
+                        </div>
+                    </div>
+
+                    <div class="demo-html demo-type">
+                        <pre>
+                            <code class="html">&lt;div class="input-wrap"&gt;
+    &lt;input id="input10" class="ip-label-fix ip-line" placeholder="예)옥정서로 , 미림타워 , 역삼동 "type="text" required&gt;
+    &lt;span class="line-animation"&gt;&lt;/span&gt;
+    &lt;label&gt;주소입력&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="demo-css  demo-type">
+                        <pre>
+                            <code class="css">input {
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: 3.5rem;
+    box-sizing: border-box;
+}
+
+input.ip-line {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+input.ip-line~.line-animation:before,
+input.ip-line~.line-animation:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4472c4;
+    transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -webkit-transition: 0.25s ease all;
+}
+
+input.ip-line~.line-animation:before {
+    left: 50%;
+}
+
+input.ip-line~.line-animation:after {
+    right: 50%;
+}
+
+input.ip-line:focus~.line-animation:before,
+input.ip-line:focus~.line-animation:after {
+    width: 50%;
+}
+
+
+
+input.ip-label~label {
+    color: #bdbdbd;
+    font-size: 2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 0.7rem;
+    left: 0.3rem;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input.ip-label:focus~label,
+input.ip-label:valid~label {
+    top: -0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    color: #8f8f8f;
+    background-color: white;
+}
+
+input.ip-label-fix~label {
+    color: #8f8f8f;
+    font-size: 1.1rem;
+    position: absolute;
+    pointer-events: none;
+    top: -0.7rem;
+    left: 0.4rem;
+    background-color: white;
+
+}</code></pre>
+                    </div>
+
+                    <div class="demo-js  demo-type">
+                        <pre>
+                            <code class="javascript">$(document).on('ready', function () {
+    input = new esayaddress.searcfomat({
+        areaid: "#input10",
+    })
+});</code></pre>
+                    </div>
+
+                    <div class="demo-resources  demo-type">
+
+                    </div>
+
+                </div>
+                <div class="demo-tail">
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
